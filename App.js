@@ -1,27 +1,22 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-  "h1",
-  { id: "heading", className: "head-text" },
-  "Hello world from React"
-);
+//getting started with react components
 
-//nested elements
-const h1 = React.createElement("h1", {}, "I am a h1 tag");
-const child = React.createElement("div", { id: "child" }, h1);
-// const parent = React.createElement("div",{id:"parent"},child);
+//functional components is a js function that returns a piece of jsx/react element
 
-//sibling elements
+function Heading() {
+  return <h1>Hello Heading in JSX</h1>;
+}
 
-const sib1 = React.createElement("h1", { key: 1 }, "Sibling-one");
-const sib2 = React.createElement("h2", { key: 2 }, "Sibling-two");
-
-const parent = React.createElement("div", { id: "parent" }, [sib1, sib2]); //array of react elements for the siblings
-
-//react.createElement method returns js object
+function Comp() {
+  return (
+    <div>
+      {/* this is component recomposition  */}
+      <Heading></Heading>
+      <p>This is a para in comp component</p>
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
-
-//render function takes the js object(react element) and converts it into html element and put it on the dom
+root.render(<Comp></Comp>);
