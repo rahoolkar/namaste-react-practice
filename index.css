@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+\.swiggy-footer {
+  background: #fafafa;
+  padding: 60px 100px;
+  font-family: Arial, sans-serif;
+  color: #2e2e2e;
+}
+
+/* Layout */
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+/* Brand */
+.footer-brand h1 {
+  color: #fc8019;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Social */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.social-icons svg:hover {
+  color: #fc8019;
+  transform: translateY(-2px);
+}
+
+/* Columns */
+.footer-col h3 {
+  font-size: 15px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-col ul li:hover {
+  color: #fc8019;
+  padding-left: 4px;
+}
+
+/* Cities */
+.footer-cities {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-cities h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.cities-grid span {
+  font-size: 13px;
+  color: #666;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.cities-grid span:hover {
+  color: #fc8019;
+}
+
+/* Bottom */
+.footer-bottom {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 25px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.app-buttons img {
+  height: 42px;
+  margin: 0 10px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.app-buttons img:hover {
+  transform: scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .swiggy-footer {
+    padding: 50px 40px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .cities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+.outer-header-container {
+  background: #fafafa;
+  color: #2e2e2e;
+  box-shadow: 0px 0px 50px #d3d3d3;
+}
+
+.header {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 3.5rem;
+}
+
+.current-location {
+  text-decoration: underline;
+  font-weight: 800;
+  text-underline-offset: 0.6rem;
+}
+
+.current-location:hover {
+  color: #fc8019;
+}
+
+.fa-angle-down {
+  margin: 0rem 0.7rem;
+  color: #fc8019;
+}
+
+.swiggy-app-logo-image {
+  width: 4.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  transition: all 0.01s ease-in;
+  margin: 1rem 0rem;
+}
+
+.swiggy-app-logo-image:hover {
+  transform: scale(1.09);
+}
+
+.first-half-header {
+  display: flex;
+}
+
+.second-half-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-items{
+    font-size: 1.2rem;
+    padding: 0rem 1rem;
+}
+
+.nav-items-text{
+    margin-left: 0.5rem;
+}
+
+.nav-items:hover{
+    color: #fc8019;
+}
