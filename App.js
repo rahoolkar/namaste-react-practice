@@ -1,7 +1,71 @@
 import ReactDOM from "react-dom/client";
 import Footer from "./Footer.jsx";
-import "./RestaurantCard.css";
 import { FaStar } from "react-icons/fa";
+
+const data = {
+  name: "Pizza Hut",
+  cloudinaryImageId:
+    "RX_THUMBNAIL/IMAGES/VENDOR/2026/2/12/e59b5860-65b7-4946-a158-9bfb6f1f7c6b_435686.JPG",
+  locality: "SCO36, Ground Floor",
+  areaName: "Sector-19",
+  costForTwo: "₹350 for two",
+  cuisines: ["Pizzas"],
+  avgRating: 4.3,
+  parentId: "721",
+  avgRatingString: "4.3",
+  totalRatingsString: "2.4K+",
+  sla: {
+    deliveryTime: 20,
+    lastMileTravel: 0.6,
+    serviceability: "SERVICEABLE",
+    slaString: "15-20 mins",
+    lastMileTravelString: "0.6 km",
+    iconType: "ICON_TYPE_EMPTY",
+  },
+  availability: {
+    nextCloseTime: "2026-04-15 04:00:00",
+    opened: true,
+  },
+  badges: {},
+  isOpen: true,
+  type: "F",
+  badgesV2: {
+    entityBadges: {
+      imageBased: {},
+      textBased: {},
+      textExtendedBadges: {},
+    },
+  },
+  aggregatedDiscountInfoV3: {
+    header: "50% OFF",
+    discountTag: "FLAT DEAL",
+  },
+  orderabilityCommunication: {
+    title: {},
+    subTitle: {},
+    message: {},
+    customIcon: {},
+  },
+  differentiatedUi: {
+    displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    differentiatedUiMediaDetails: {
+      mediaType: "ADS_MEDIA_ENUM_IMAGE",
+      lottie: {},
+      video: {},
+    },
+  },
+  reviewsSummary: {},
+  displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  restaurantOfferPresentationInfo: {},
+  externalRatings: {
+    aggregatedRating: {
+      rating: "3.4",
+      ratingCount: "633",
+    },
+    source: "GOOGLE",
+    sourceIconImageId: "v1704440323/google_ratings/rating_google_tag",
+  },
+};
 
 function Header() {
   return (
@@ -9,7 +73,10 @@ function Header() {
       <div className="header">
         <div className="first-half-header">
           <div className="app-logo">
-            <img className="swiggy-app-logo-image" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png?_=20201024153532"></img>
+            <img
+              className="swiggy-app-logo-image"
+              src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png?_=20201024153532"
+            ></img>
           </div>
           <div className="change-location">
             <h4 className="current-location">Other</h4>
@@ -43,48 +110,36 @@ function Header() {
   );
 }
 
-import React from "react";
-import "./RestaurantCard.css";
-import { FaStar } from "react-icons/fa";
-
-const RestaurantCard = ({ data }) => {
-  const {
-    name,
-    image,
-    rating,
-    time,
-    cuisine,
-    location,
-  } = data;
-
+const RestaurantCard = (props) => {
+  const { resData } = props;
+  const { name, avgRating, cuisines, sla, areaName, cloudinaryImageId } =
+    resData;
   return (
     <div className="restaurant-card">
-
-      {/* Image */}
       <div className="card-image-container">
-        <img src={image} alt={name} className="card-image" />
-
-        {/* Gradient overlay */}
-        <div className="image-overlay"></div>
-
-        {/* Delivery time badge */}
-        <span className="time-badge">{time} mins</span>
+        <img
+          src={
+            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+            cloudinaryImageId
+          }
+          alt="card-image"
+          className="card-image"
+        />
       </div>
 
-      {/* Content */}
       <div className="card-content">
         <h3 className="restaurant-name">{name}</h3>
 
         <div className="card-info">
           <span className="rating">
-            <FaStar /> {rating}
+            <FaStar /> {avgRating}
           </span>
           <span className="dot">•</span>
-          <span>{time} mins</span>
+          <span>{sla.deliveryTime} mins</span>
         </div>
 
-        <p className="cuisine">{cuisine}</p>
-        <p className="location">{location}</p>
+        <p className="cuisine">{cuisines}</p>
+        <p className="location">{`${areaName}`}</p>
       </div>
     </div>
   );
@@ -94,6 +149,7 @@ function App() {
   return (
     <div className="app">
       <Header></Header>
+      <RestaurantCard resData={data}></RestaurantCard>
       <Footer></Footer>
     </div>
   );
