@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 \.swiggy-footer {
   background: #fafafa;
@@ -204,12 +205,13 @@
   width: 4.5rem;
   height: 3.5rem;
   border-radius: 1rem;
-  transition: all 0.01s ease-in;
+  transition: transform 0.2s ease;
+  cursor: pointer;
   margin: 1rem 0rem;
 }
 
 .swiggy-app-logo-image:hover {
-  transform: scale(1.09);
+  transform: scale(1.08);
 }
 
 .first-half-header {
@@ -238,6 +240,7 @@
 .restaurant-card {
   width: 260px;
   cursor: pointer;
+  margin: 0rem 0.5rem;
   transition: transform 0.25s ease;
 }
 
@@ -307,4 +310,10 @@
 .location {
   font-size: 13px;
   color: #93959f;
+}
+
+.restaurant-card-container{
+  display: flex;
+  margin: 0.5rem 0rem;
+  flex-wrap: wrap;
 }
