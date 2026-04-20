@@ -317,3 +317,17 @@
   margin: 0.5rem 0rem;
   flex-wrap: wrap;
 }
+
+.top-rated-filter-btn{
+  border-radius: 1rem;
+  padding : 0.5rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-weight: 900;
+  color: #555;
+}
+
+.top-rated-filter-btn:hover{
+  color: #fc8019;
+  cursor: pointer;
+}
