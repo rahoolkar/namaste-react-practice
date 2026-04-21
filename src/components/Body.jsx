@@ -1,16 +1,39 @@
-import { useState } from "react";
-import restaurantList from "../utils/mockData";
+import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import ShimmerContainer from "./ShimmerContainer.jsx";
 
 function Body() {
-  const [restaurantListCards, setRestaurantListCards] =
-    useState(restaurantList);
+  const [restaurantListCards, setRestaurantListCards] = useState([]);
 
   function filterTopRatedRestaursnts() {
     const filteredRestaurants = restaurantListCards.filter((restaurant) => {
-      return restaurant.info.avgRating > 4.5;
+      return restaurant.info.avgRating > 4;
     });
     setRestaurantListCards(filteredRestaurants);
+  }
+
+  useEffect(function () {
+    getSwiggyData();
+  }, []); //useffect callback is called after the component is rendered fully
+
+  async function getSwiggyData() {
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/mapi/restaurants/list/v5?&lat=30.73390&lng=76.78890"
+      );
+      const json = await response.json();
+
+      setRestaurantListCards(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  if (restaurantListCards.length == 0) {
+    return <ShimmerContainer></ShimmerContainer>;
   }
 
   return (

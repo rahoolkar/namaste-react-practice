@@ -312,22 +312,79 @@
   color: #93959f;
 }
 
-.restaurant-card-container{
+.restaurant-card-container {
   display: flex;
   margin: 0.5rem 0rem;
   flex-wrap: wrap;
 }
 
-.top-rated-filter-btn{
+.top-rated-filter-btn {
   border-radius: 1rem;
-  padding : 0.5rem;
+  padding: 0.5rem;
   margin-left: 1rem;
   margin-top: 0.5rem;
   font-weight: 900;
   color: #555;
 }
 
-.top-rated-filter-btn:hover{
+.top-rated-filter-btn:hover {
   color: #fc8019;
   cursor: pointer;
+}
+
+.shimmer-container {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 1rem;
+}
+
+/* Card */
+.shimmer-card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Image */
+.shimmer-image {
+  height: 160px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #eeeeee 25%, #f5f5f5 50%, #eeeeee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Content */
+.shimmer-content {
+  padding: 10px 5px;
+}
+
+.shimmer-line {
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #eeeeee 25%, #f5f5f5 50%, #eeeeee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.shimmer-line.title {
+  width: 70%;
+  height: 14px;
+}
+
+.shimmer-line.small {
+  width: 50%;
+}
+
+/* Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
