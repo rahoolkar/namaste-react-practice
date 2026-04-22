@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerContainer from "./ShimmerContainer.jsx";
+import { SWIGGY_API } from "../utils/constant.js";
 
 function Body() {
   const [restaurantListCards, setRestaurantListCards] = useState([]);
@@ -18,9 +19,7 @@ function Body() {
 
   async function getSwiggyData() {
     try {
-      const response = await fetch(
-        "https://www.swiggy.com/mapi/restaurants/list/v5?&lat=30.73390&lng=76.78890"
-      );
+      const response = await fetch(SWIGGY_API);
       const json = await response.json();
 
       setRestaurantListCards(

@@ -1,3 +1,6 @@
+import { SWIGGY_HEADER_LOGO } from "../utils/constant";
+import LoginButton from "./LoginButton";
+
 function Header() {
   return (
     <div className="outer-header-container">
@@ -6,7 +9,7 @@ function Header() {
           <div className="app-logo">
             <img
               className="swiggy-app-logo-image"
-              src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png?_=20201024153532"
+              src={SWIGGY_HEADER_LOGO}
             ></img>
           </div>
           <div className="change-location">
@@ -34,6 +37,9 @@ function Header() {
           <div className="nav-items">
             <i className="fa-solid fa-cart-shopping"></i>
             <span className="nav-items-text">Cart</span>
+          </div>
+          <div>
+            <LoginButton></LoginButton>
           </div>
         </div>
       </div>

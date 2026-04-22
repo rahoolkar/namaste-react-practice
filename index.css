@@ -388,3 +388,36 @@
     background-position: 200% 0;
   }
 }
+
+.auth-btn {
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: white;
+  color: #02060c;
+  transition: all 0.25s ease;
+}
+
+/* Login style */
+.auth-btn.login {
+  border: 1px solid #02060c;
+}
+
+.auth-btn.login:hover {
+  color: #fc8019;
+  border-color: #fc8019;
+}
+
+/* Logout style */
+.auth-btn.logout {
+  border: 1px solid #fc8019;
+  color: #fc8019;
+}
+
+.auth-btn.logout:hover {
+  background-color: #fc8019;
+  color: white;
+}

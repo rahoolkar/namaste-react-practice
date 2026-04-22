@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa6";
+import { CLOUDINARY_IMAGES_LINK } from "../utils/constant";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -8,10 +9,7 @@ const RestaurantCard = (props) => {
     <div className="restaurant-card">
       <div className="card-image-container">
         <img
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-            cloudinaryImageId
-          }
+          src={CLOUDINARY_IMAGES_LINK + cloudinaryImageId}
           alt="card-image"
           className="card-image"
         />
