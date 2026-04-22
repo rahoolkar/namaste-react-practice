@@ -55,7 +55,7 @@ function Body() {
 
   return (
     <div className="body">
-      <div className="restaunrant-card-filter">
+      <div className="restaurant-card-filter">
         <button
           className="top-rated-filter-btn"
           onClick={filterTopRatedRestaursnts}

@@ -532,3 +532,16 @@
   margin: 0 auto;
   padding: 20px;
 }
+
+.restaurant-card-filter {
+  display: flex;
+}
+
+.search-container {
+  width: 80%;
+  margin: auto;
+}
+
+.search-btn {
+  margin: 0rem 1rem;
+}

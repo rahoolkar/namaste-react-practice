@@ -18,7 +18,12 @@
     "test": "jest"
   },
   "devDependencies": {
-    "parcel": "^2.16.4"
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
+    "events": "^3.3.0",
+    "parcel": "^2.16.4",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^19.2.5",
