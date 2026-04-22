@@ -2,9 +2,15 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerContainer from "./ShimmerContainer.jsx";
 import { SWIGGY_API } from "../utils/constant.js";
+import Carousel from "./Carousel.jsx";
+import { restaurantList, carouselImagesList } from "../utils/mockData.js";
+import CarouselShimmer from "./CarouselShimmer.jsx";
 
 function Body() {
-  const [restaurantListCards, setRestaurantListCards] = useState([]);
+  const [restaurantListCards, setRestaurantListCards] =
+    useState(restaurantList);
+
+  const [carouselImages, setCarouselImages] = useState(carouselImagesList);
 
   function filterTopRatedRestaursnts() {
     const filteredRestaurants = restaurantListCards.filter((restaurant) => {
@@ -26,13 +32,25 @@ function Body() {
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
+      setCarouselImages(
+        json?.data?.cards[0].card?.card?.gridElements?.infoWithStyle?.info
+      );
     } catch (error) {
       console.log(error);
     }
   }
 
   if (restaurantListCards.length == 0) {
-    return <ShimmerContainer></ShimmerContainer>;
+    return (
+      <div className="shimmer-body">
+        <div>
+          <CarouselShimmer></CarouselShimmer>
+        </div>
+        <div>
+          <ShimmerContainer></ShimmerContainer>;
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -44,6 +62,9 @@ function Body() {
         >
           Top Rated Restaurants
         </button>
+      </div>
+      <div className="whats-on-your-mind">
+        <Carousel items={carouselImages}></Carousel>
       </div>
       <div className="restaurant-card-container">
         {restaurantListCards.map((restaurant, index) => {
