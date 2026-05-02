@@ -1,5 +1,6 @@
 import { SWIGGY_HEADER_LOGO } from "../utils/constant";
 import LoginButton from "./LoginButton";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -7,10 +8,12 @@ function Header() {
       <div className="header">
         <div className="first-half-header">
           <div className="app-logo">
-            <img
-              className="swiggy-app-logo-image"
-              src={SWIGGY_HEADER_LOGO}
-            ></img>
+            <Link to={"/"}>
+              <img
+                className="swiggy-app-logo-image"
+                src={SWIGGY_HEADER_LOGO}
+              ></img>
+            </Link>
           </div>
           <div className="change-location">
             <h4 className="current-location">Other</h4>
@@ -19,8 +22,10 @@ function Header() {
         </div>
         <div className="second-half-header">
           <div className="nav-items">
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <span className="nav-items-text">Search</span>
+            <Link to={"/search"}>
+              <i className="fa-solid fa-magnifying-glass"></i>
+              <span className="nav-items-text">Search</span>
+            </Link>
           </div>
           <div className="nav-items">
             <i className="fa-solid fa-tag"></i>

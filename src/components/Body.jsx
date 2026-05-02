@@ -5,6 +5,7 @@ import { SWIGGY_API } from "../utils/constant.js";
 import Carousel from "./Carousel.jsx";
 import { restaurantList, carouselImagesList } from "../utils/mockData.js";
 import CarouselShimmer from "./CarouselShimmer.jsx";
+import { Link } from "react-router-dom";
 
 function Body() {
   const [restaurantListCards, setRestaurantListCards] =
@@ -69,10 +70,12 @@ function Body() {
       <div className="restaurant-card-container">
         {restaurantListCards.map((restaurant, index) => {
           return (
-            <RestaurantCard
+            <Link
               key={restaurant.info.id}
-              resData={restaurant}
-            ></RestaurantCard>
+              to={`/restaurants/${restaurant.info.id}`}
+            >
+              <RestaurantCard resData={restaurant}></RestaurantCard>
+            </Link>
           );
         })}
       </div>
