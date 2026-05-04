@@ -5,13 +5,12 @@ function Carousel({ items }) {
   const containerRef = useRef(null);
 
   const scroll = (direction) => {
-    const { current } = containerRef;
     const scrollAmount = 300;
 
     if (direction === "left") {
-      current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      containerRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
-      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
