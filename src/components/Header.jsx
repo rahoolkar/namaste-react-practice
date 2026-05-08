@@ -32,8 +32,10 @@ function Header() {
             <span className="nav-items-text">Offers</span>
           </div>
           <div className="nav-items">
-            <i className="fa-solid fa-life-ring"></i>
-            <span className="nav-items-text">Help</span>
+            <Link to={"/help"}>
+              <i className="fa-solid fa-life-ring"></i>
+              <span className="nav-items-text">Help</span>
+            </Link>
           </div>
           <div className="nav-items">
             <i className="fa-solid fa-circle-user"></i>
