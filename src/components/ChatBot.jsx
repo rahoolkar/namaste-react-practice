@@ -1,5 +1,4 @@
 import MenuShimmer from "./MenuShimmer";
-import ShimmerCard from "./ShimmerCard";
 import React from "react";
 
 class ChatBot extends React.Component {

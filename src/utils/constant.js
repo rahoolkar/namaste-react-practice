@@ -4,6 +4,15 @@ const SWIGGY_API =
 const CLOUDINARY_IMAGES_LINK =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-const SWIGGY_HEADER_LOGO = "https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png?_=20201024153532";
+const SWIGGY_HEADER_LOGO =
+  "https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png?_=20201024153532";
 
-export { SWIGGY_API, CLOUDINARY_IMAGES_LINK, SWIGGY_HEADER_LOGO };
+const RESTAURANT_MENU_API =
+  "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.73390&lng=76.78890&restaurantId=";
+
+export {
+  SWIGGY_API,
+  CLOUDINARY_IMAGES_LINK,
+  SWIGGY_HEADER_LOGO,
+  RESTAURANT_MENU_API,
+};
