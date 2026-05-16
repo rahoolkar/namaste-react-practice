@@ -7,8 +7,15 @@ import Error from "./components/Error.jsx";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaunrantMenu from "./components/RestaurantMenu.jsx";
 import Help from "./components/Help.jsx";
+import useConnect from "./utils/hooks/useConnect.js";
 
 function App() {
+  const networkStatus = useConnect();
+
+  if (networkStatus === false) {
+    return <h1>Oops! You are offline</h1>;
+  }
+
   return (
     <div className="app">
       <Header></Header>
