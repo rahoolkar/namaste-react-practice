@@ -1,12 +1,72 @@
 function ShimmerCard() {
   return (
-    <div className="shimmer-card">
-      <div className="shimmer-image"></div>
+    <div
+      className="
+        animate-pulse
+        overflow-hidden
+        rounded-2xl
+        bg-white
+        p-3
+      "
+    >
+      <div
+        className="
+          h-[180px]
+          w-full
+          rounded-2xl
+          bg-gray-200
+        "
+      ></div>
 
-      <div className="shimmer-content">
-        <div className="shimmer-line title"></div>
-        <div className="shimmer-line small"></div>
-        <div className="shimmer-line small"></div>
+      <div className="mt-4">
+        <div
+          className="
+            h-5
+            w-3/4
+            rounded-md
+            bg-gray-200
+          "
+        ></div>
+
+        <div className="mt-3 flex items-center gap-3">
+          <div
+            className="
+              h-4
+              w-14
+              rounded-md
+              bg-gray-200
+            "
+          ></div>
+
+          <div
+            className="
+              h-4
+              w-16
+              rounded-md
+              bg-gray-200
+            "
+          ></div>
+        </div>
+
+        <div
+          className="
+            mt-3
+            h-4
+            w-full
+            rounded-md
+            bg-gray-200
+          "
+        ></div>
+
+        <div
+          className="
+            mt-3
+            h-4
+            w-1/2
+            rounded-md
+            bg-gray-200
+          "
+        ></div>
       </div>
     </div>
   );
