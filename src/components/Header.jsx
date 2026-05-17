@@ -28,8 +28,10 @@ function Header() {
             </Link>
           </div>
           <div className="nav-items">
-            <i className="fa-solid fa-tag"></i>
-            <span className="nav-items-text">Offers</span>
+            <Link to={"/offers"}>
+              <i className="fa-solid fa-tag"></i>
+              <span className="nav-items-text">Offers</span>
+            </Link>
           </div>
           <div className="nav-items">
             <Link to={"/help"}>
@@ -38,8 +40,10 @@ function Header() {
             </Link>
           </div>
           <div className="nav-items">
-            <i className="fa-solid fa-circle-user"></i>
-            <span className="nav-items-text">Sign In</span>
+            <Link to={"/signin"}>
+              <i className="fa-solid fa-circle-user"></i>
+              <span className="nav-items-text">Sign In</span>
+            </Link>
           </div>
           <div className="nav-items">
             <i className="fa-solid fa-cart-shopping"></i>
