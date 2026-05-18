@@ -8,6 +8,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaunrantMenu from "./components/RestaurantMenu.jsx";
 import useConnect from "./utils/hooks/useConnect.js";
 import Search from "./components/Search.jsx";
+import UserContext from "./utils/hooks/UserContext.js";
 
 function App() {
   const networkStatus = useConnect();
@@ -18,9 +19,11 @@ function App() {
 
   return (
     <div className="app">
-      <Header></Header>
-      <Outlet></Outlet>
-      <Footer></Footer>
+      <UserContext.Provider value={{ loginuser: "rahulkar" }}>
+        <Header></Header>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </UserContext.Provider>
     </div>
   );
 }
