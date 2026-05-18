@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
-import { IoIosArrowDown } from "react-icons/io";
 import MenuShimmer from "./MenuShimmer";
 import useRestaurantMenu from "../utils/hooks/useRestaurantMenu";
+import AccordionTab from "./AccordionTab";
 
 function RestaurantMenu() {
   const { resId } = useParams();
@@ -25,8 +25,18 @@ function RestaurantMenu() {
     areaName,
   } = restaurantInfo;
 
+  const restaurantMenuItems =
+    restaurantMenuData?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (card) => {
+        return (
+          card.card.card["@type"] ==
+          "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+        );
+      }
+    );
+
   return (
-    <main className="min-h-screen bg-[#f8f8f8] pb-20">
+    <div className="min-h-screen bg-[#f8f8f8] pb-20">
       <div className="mx-auto max-w-[850px] px-4 py-8">
         <p className="mb-8 text-sm text-gray-500">Home / {name}</p>
 
@@ -100,8 +110,20 @@ function RestaurantMenu() {
 
           <div className="h-[1px] flex-1 bg-gray-300"></div>
         </div>
+
+        <div className="bg-gray-200 rounded-xl">
+          {restaurantMenuItems.map((item) => {
+            return (
+              <AccordionTab
+                key={item.card.card.categoryId}
+                categories={item.card.card.categories}
+                title={item.card.card.title}
+              ></AccordionTab>
+            );
+          })}
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
 
