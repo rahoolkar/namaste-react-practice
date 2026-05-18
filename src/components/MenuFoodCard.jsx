@@ -87,7 +87,7 @@ function MenuFoodCard({ data }) {
           flex
           w-full
           justify-center
-          md:w-[180px]
+          md:w-45
         "
       >
         {/* Food Image */}
@@ -96,12 +96,12 @@ function MenuFoodCard({ data }) {
             src={CLOUDINARY_IMAGES_LINK + imageId}
             alt={name}
             className="
-              h-[160px]
+              h-40
               w-full
               rounded-2xl
               object-cover
               shadow-sm
-              md:w-[180px]
+              md:w-45
             "
           />
         )}
@@ -109,7 +109,7 @@ function MenuFoodCard({ data }) {
         <button
           className="
             absolute
-            bottom-[-12px]
+            -bottom-3
             left-1/2
             z-10
             -translate-x-1/2

@@ -5,7 +5,7 @@ import LoginButton from "./LoginButton";
 function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-md">
-      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-4 lg:px-0">
+      <div className="mx-auto flex h-20 max-w-300 items-center justify-between px-4 lg:px-0">
         <div className="flex items-center gap-10">
           <Link to="/" className="flex items-center">
             <img
@@ -20,7 +20,7 @@ function Header() {
               Other
             </span>
 
-            <span className="max-w-[220px] truncate text-sm text-gray-500">
+            <span className="max-w-55 truncate text-sm text-gray-500">
               Chikan, Haryana, India
             </span>
 

@@ -37,7 +37,7 @@ function RestaurantMenu() {
 
   return (
     <div className="min-h-screen bg-[#f8f8f8] pb-20">
-      <div className="mx-auto max-w-[850px] px-4 py-8">
+      <div className="mx-auto max-w-212.5 px-4 py-8">
         <p className="mb-8 text-sm text-gray-500">Home / {name}</p>
 
         <section>

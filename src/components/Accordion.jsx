@@ -1,21 +1,22 @@
 import AccordionBody from "./AccordionBody";
-import { useState } from "react";
 
-function Accordion({ itemCards, title }) {
-  const [shouldExpand, setShouldExpand] = useState(false);
-  console.log(itemCards);
-
-  function handleExpand() {
+function Accordion({
+  itemCards,
+  title,
+  shouldExpand,
+  setShouldExpandIndex,
+  setExpandToNull,
+}) {
+  function handleAccordionExpand() {
     if (shouldExpand) {
-      setShouldExpand(false);
+      setExpandToNull();
     } else {
-      setShouldExpand(true);
+      setShouldExpandIndex();
     }
   }
-
   return (
     <div className="border-b border-gray-300 py-4 cursor-pointer">
-      <div className="flex justify-between" onClick={handleExpand}>
+      <div className="flex justify-between" onClick={handleAccordionExpand}>
         <span className="font-bold text-md ml-2">
           {title} ({itemCards.length})
         </span>
