@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { SWIGGY_HEADER_LOGO } from "../utils/constant";
 import LoginButton from "./LoginButton";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const cartItems = useSelector(function (store) {
+    return store.cart.addedItems;
+  });
+
+  console.log(cartItems);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-md">
       <div className="mx-auto flex h-20 max-w-300 items-center justify-between px-4 lg:px-0">
@@ -79,7 +86,7 @@ function Header() {
               <i className="fa-solid fa-cart-shopping text-lg"></i>
 
               <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#fc8019] text-[10px] font-bold text-white">
-                0
+                {cartItems.length}
               </span>
             </div>
 

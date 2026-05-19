@@ -1,11 +1,21 @@
 import { FaStar } from "react-icons/fa6";
 import { CLOUDINARY_IMAGES_LINK } from "../utils/constant";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 function MenuFoodCard({ data }) {
-  const { name, price, defaultPrice, ratings, description, imageId, isVeg } =
-    data;
+  const { name, price, defaultPrice, ratings, description, imageId } = data;
 
   const finalPrice = (price || defaultPrice) / 100;
+
+  console.log(data);
+
+  const dispatch = useDispatch();
+
+  function handleAddButtonClick() {
+    //dispatch an action
+    dispatch(addItem(data));
+  }
 
   return (
     <div
@@ -66,7 +76,6 @@ function MenuFoodCard({ data }) {
           </div>
         )}
 
-        {/* Description */}
         <p
           className="
             mt-4
@@ -80,7 +89,6 @@ function MenuFoodCard({ data }) {
         </p>
       </div>
 
-      {/* Right Image Section */}
       <div
         className="
           relative
@@ -90,7 +98,6 @@ function MenuFoodCard({ data }) {
           md:w-45
         "
       >
-        {/* Food Image */}
         {imageId && (
           <img
             src={CLOUDINARY_IMAGES_LINK + imageId}
@@ -128,6 +135,7 @@ function MenuFoodCard({ data }) {
             hover:bg-gray-100
             active:scale-95
           "
+          onClick={handleAddButtonClick}
         >
           ADD
         </button>

@@ -11,7 +11,7 @@ function ShimmerCard() {
     >
       <div
         className="
-          h-[180px]
+          h-45
           w-full
           rounded-2xl
           bg-gray-200
