@@ -22,7 +22,7 @@ const RestaurantCard = ({ resData }) => {
           src={CLOUDINARY_IMAGES_LINK + cloudinaryImageId}
           alt={name}
           className="
-            h-[220px]
+            h-55
             w-full
             rounded-2xl
             object-cover
@@ -34,7 +34,7 @@ const RestaurantCard = ({ resData }) => {
           className="
             absolute
             inset-0
-            bg-gradient-to-t
+            bg-linear-to-t
             from-black/70
             via-black/10
             to-transparent

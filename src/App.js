@@ -3,7 +3,7 @@ import Header from "./components/Header.jsx";
 import Body from "./components/Body.jsx";
 import Footer from "./components/Footer.jsx";
 import Error from "./components/Error.jsx";
-import { lazy, Suspense } from "react";
+import Cart from "./components/Cart.jsx";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaunrantMenu from "./components/RestaurantMenu.jsx";
 import useConnect from "./utils/hooks/useConnect.js";
@@ -48,6 +48,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <RestaunrantMenu></RestaunrantMenu>,
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>,
       },
     ],
     errorElement: <Error></Error>,
