@@ -14,11 +14,11 @@ function Body() {
   if (listOfRestaurants.length === 0) {
     return (
       <div className="min-h-screen bg-[#f8f8f8]">
-        <div className="mx-auto max-w-[1200px] px-4 py-8">
+        <div className="mx-auto max-w-300 px-4 py-8">
           <CarouselShimmer />
         </div>
 
-        <div className="mx-auto max-w-[1200px] px-4">
+        <div className="mx-auto max-w-300 px-4">
           <ShimmerContainer />
         </div>
       </div>
@@ -27,7 +27,7 @@ function Body() {
 
   return (
     <main className="min-h-screen bg-[#f8f8f8]">
-      <div className="mx-auto max-w-[1200px] px-4 py-8">
+      <div className="mx-auto max-w-300 px-4 py-8">
         <div className="mb-10 flex items-center justify-between">
           <button className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-[#3d4152] shadow-sm transition hover:border-[#fc8019] hover:text-[#fc8019]">
             Top Rated Restaurants
